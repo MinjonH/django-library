@@ -10,6 +10,8 @@ from library_manager import forms, models
 
 # shows the homepage
 def home_view(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('afterlogin')
     return render(request, 'library/dashboard.html')
 
 def admin_signup(request):
@@ -29,4 +31,4 @@ def admin_signup(request):
     return render(request,'library/admin_signup.html',{'form':form})
 
 def dashboard_view(request):
-        return render(request,'library/dashboard.html')
+    return render(request,'library/dashboard.html')

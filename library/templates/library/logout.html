@@ -1,0 +1,34 @@
+{% include "library/navbar.html" %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<style>
+			.loginError {
+				font-size: 3em;
+				text-align: center;
+				margin-top: 50vh;
+				transform: translateY(-50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="loginError">
+			<h1>You are logged out.</h1>
+
+			<a
+				href="admin_login"
+				role="button"
+				class="btn btn-secondary btn-lg active"
+				aria-pressed="true"
+				>Login</a
+			>
+			<a
+				href="admin_signup"
+				role="button"
+				class="btn btn-secondary btn-lg active"
+				aria-pressed="true"
+				>Sign Up</a
+			>
+		</div>
+	</body>
+</html>
