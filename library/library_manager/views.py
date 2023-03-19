@@ -19,16 +19,26 @@ def admin_signup(request):
     if request.method=='POST':
         form=forms.AdminSigupForm(request.POST)
         if form.is_valid():
-            user=form.save()
+            user = form.save()
             user.set_password(user.password)
+            is_superuser = True
+            is_staff = True
+            user.is_superuser = is_superuser
+            user.is_staff = is_staff
             user.save()
-
-
-            my_admin_group = Group.objects.get_or_create(name='ADMIN')
-            my_admin_group[0].user_set.add(user)
-
-            return HttpResponseRedirect('adminlogin')
+            login(request, user)
+            return HttpResponseRedirect('afterlogin')
     return render(request,'library/admin_signup.html',{'form':form})
 
 def dashboard_view(request):
     return render(request,'library/dashboard.html')
+
+@login_required(login_url='adminlogin')
+def view_books(request):
+    books = models.Book.objects.all()
+    return render(request,'library/view_books.html',{'books':books})
+
+@login_required(login_url='adminlogin')
+def view_students(request):
+    students = models.Student.objects.all()
+    return render(request,'library/view_students.html',{'students':students})

@@ -1,11 +1,7 @@
 from django.contrib import admin
-from .models import Book,Student 
+from .models import Book, Student, Series
+
 # Register your models here.
-class BookAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(Book, BookAdmin)
-
-
-class StudentAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(Student, StudentAdmin)
+admin.site.register(Book)
+admin.site.register(Series)
+admin.site.register(Student)

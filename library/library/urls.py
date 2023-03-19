@@ -18,4 +18,7 @@ urlpatterns = [
     # displays after login
     path('afterlogin', views.dashboard_view),
 
+    #book functions
+    path('view_books', views.view_books),
+    path('view_students', views.view_students),
 ]
