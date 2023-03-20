@@ -1,10 +1,9 @@
 from django.conf import settings
 from django.contrib import admin
-from django.conf.urls import include
+from django.conf.urls import include, static
 from django.urls import path
 from library_manager import views
 from django.contrib.auth.views import LoginView,LogoutView
-from library.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
