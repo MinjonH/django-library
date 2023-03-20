@@ -1,10 +1,10 @@
+from django.conf import settings
 from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from library_manager import views
 from django.contrib.auth.views import LoginView,LogoutView
-
-
+from library.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +33,6 @@ urlpatterns = [
     path('student/add', views.add_student, name='add_student'),
     path('student/update/<int:pk>', views.student_update, name='student_update'),
     path('student/delete/<int:pk>', views.student_delete, name='student_delete'),
-
-
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
