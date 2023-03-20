@@ -1,35 +1,36 @@
+from datetime import datetime,timedelta
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django_extensions.db.fields import AutoSlugField
 
 class Student(models.Model):
     student_num = models.IntegerField(unique=True, db_index=True)
-    name = models.CharField(max_length=255, blank=False)
+    first_name = models.CharField(max_length=255, blank=False)
+    last_name = models.CharField(max_length=255, blank=False)
     grade = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(12)])
     book_limit = models.IntegerField(default=3)
-    slug = AutoSlugField(populate_from='name') 
+    issued_books = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.name
-
-class Series(models.Model):
-    name = models.CharField(max_length=255, db_index=True)
-    slug = AutoSlugField(populate_from='name') 
-    
-    class Meta:
-        verbose_name_plural = 'Series'
-
-    def __str__(self):
-        return self.name
+        return self.first_name + ' ' + self.last_name + " - " + str(self.student_num)
 
 
 class Book(models.Model):
     title = models.CharField(max_length=255, blank=False)
     author = models.CharField(max_length=255, blank=True)
     copies = models.IntegerField(default=1)
-    series = models.ForeignKey(Series, related_name='book', on_delete=models.CASCADE)   
     is_issued = models.BooleanField(default=False)
-    slug = AutoSlugField(populate_from='title') 
 
     def __str__(self) -> str:
         return self.title
+
+def get_expiry():
+    return datetime.today() + timedelta(days=7)
+ 
+class IssueBook(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    issue_date = models.DateTimeField(auto_now_add=True)
+    return_date = models.DateTimeField(default=get_expiry)
+    def __str__(self):
+        return self.student
+

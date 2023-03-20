@@ -26,9 +26,9 @@
 		</style>
 	</head>
 	<body>
-		{% if books %}
+		{% if book_issues %}
 		<div class="container">
-			<h1 class="display-4 text-center">ALL BOOKS</h1>
+			<h1 class="display-4 text-center">ISSUED BOOKS</h1>
 			<div class="row">
 				<div class="col-4">
 					<input
@@ -38,12 +38,7 @@
 					/>
 				</div>
 				<div class="col-8 text-right">
-					<a href="{% url 'issue_book' %}" class="btn btn-outline-warning mb-4"
-						>Issue Book</a
-					>
-					<a href="{% url 'add_book' %}" class="btn btn-outline-warning mb-4"
-						>Add Book</a
-					>
+					<a href="add_book" class="btn btn-warning mb-4">Add Book</a>
 				</div>
 			</div>
 			<div class="table-responsive">
@@ -53,33 +48,48 @@
 				>
 					<thead class="text-center align-middle">
 						<tr>
-							<th class="text-md col-1 font-bold cursor-default w-20">
-								Book ID
+							<th class="text-md col-3 font-bold cursor-default">Book Title</th>
+							<th class="text-md col-3 font-bold cursor-default">
+								Student Name
 							</th>
-							<th class="text-md col-4 font-bold cursor-default">Book Name</th>
-							<th class="text-md col-4 font-bold cursor-default">Author</th>
-							<th class="text-md col-1 font-bold cursor-default">Copies</th>
+							<th class="text-md col-2 font-bold cursor-default">
+								Date Issued
+							</th>
+							<th class="text-md col-2 font-bold cursor-default">
+								Return Date
+							</th>
 							<th class="text-md font-bold cursor-default">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-						{% for book in books %}
+						{% for book_issue in book_issues %}
 						<tr>
-							<td class="text-center align-middle">{{book.id}}</td>
-							<td class="text-center align-middle">{{book.title}}</td>
-							<td class="text-center align-middle">{{book.author}}</td>
-							<td class="text-center align-middle">{{book.copies}}</td>
 							<td class="text-center align-middle">
-								<a
-									class="btn btn-outline-secondary"
-									href="{% url 'book_update' pk=book.id %}"
-									><i class="fa-regular fa-pen-to-square"></i
-								></a>
-								<a
-									class="btn btn-outline-danger"
-									href="{% url 'book_delete' pk=book.id %}"
-									><i class="fa-solid fa-trash"></i
-								></a>
+								{{ book_issue.book.title }}
+							</td>
+							<td class="text-center align-middle">
+								{{ book_issue.student.first_name }}
+								{{book_issue.student.last_name}}
+							</td>
+							<td class="text-center align-middle">
+								{{ book_issue.issue_date|date:'d-m-Y' }}
+							</td>
+							<td class="text-center align-middle">
+								{{ book_issue.return_date|date:'d-m-Y' }}
+							</td>
+							<td
+								class="text-center align-middle"
+								class="text-center align-middle"
+							>
+								<form
+									action="{% url 'return_book' book_issue.id %}"
+									method="post"
+								>
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-info">
+										<i class="fa-solid fa-book"></i>
+									</button>
+								</form>
 							</td>
 						</tr>
 						{% endfor %}
@@ -89,7 +99,7 @@
 		</div>
 
 		{% else %}
-		<h1 class="display-4 text-center">No books</h1>
+		<h1 class="display-4 text-center">No books have been issued</h1>
 
 		{% endif %}
 	</body>

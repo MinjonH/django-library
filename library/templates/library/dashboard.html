@@ -83,30 +83,43 @@
 			<div class="card-body">
 				<h1 class="card-title text-center display-4">CHOOSE AN OPTION</h1>
 				<div class="btns text-center">
-					<a href="#" class="btn btn-lg btn-block btn-grey btn-outline-dark"
-						>Issue Book</a
+					<a
+						href="{% url 'issue_book' %}"
+						class="btn btn-lg btn-block btn-grey btn-outline-dark"
+						>Issue Book to Student</a
 					>
 				</div>
 				<div class="btns text-center">
-					<a href="#" class="btn btn-lg btn-block btn-grey btn-outline-dark"
+					<a
+						href="{% url 'add_book' %}"
+						class="btn btn-lg btn-block btn-grey btn-outline-dark"
 						>Add Book</a
 					>
 				</div>
 				<div class="btns text-center">
-					<a href="#" class="btn btn-lg btn-block btn-grey btn-outline-dark"
+					<a
+						href="{% url 'add_student' %}"
+						class="btn btn-lg btn-block btn-grey btn-outline-dark"
 						>Add Student</a
 					>
 				</div>
 				<div class="btns text-center">
 					<a
-						href="view_books"
+						href="{% url 'view_books' %}"
 						class="btn btn-lg btn-block btn-grey btn-outline-dark"
 						>View Books</a
 					>
 				</div>
 				<div class="btns text-center">
 					<a
-						href="view_students"
+						href="{% url 'issued_books' %}"
+						class="btn btn-lg btn-block btn-grey btn-outline-dark"
+						>View Issued Books</a
+					>
+				</div>
+				<div class="btns text-center">
+					<a
+						href="{% url 'view_students' %}"
 						class="btn btn-lg btn-block btn-grey btn-outline-dark"
 						>View Students</a
 					>
@@ -118,14 +131,14 @@
 			<h1>You cannot view the dashboard without logging in first.</h1>
 
 			<a
-				href="admin_login"
+				href="login"
 				role="button"
 				class="btn btn-secondary btn-lg active"
 				aria-pressed="true"
 				>Login</a
 			>
 			<a
-				href="admin_signup"
+				href="signup"
 				role="button"
 				class="btn btn-secondary btn-lg active"
 				aria-pressed="true"

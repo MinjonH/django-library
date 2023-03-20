@@ -14,8 +14,7 @@
 		label {
 			font-weight: bold;
 		}
-		input[type="text"],
-		input[type="password"] {
+		input, select {
 			border: none;
 			border-radius: 10px;
 			border-bottom: 2px solid #3A3A3A;
@@ -26,8 +25,7 @@
 			font-weight: bold;
             width: 85%;
 		}
-		input[type="text"]:focus,
-		input[type="password"]:focus {
+		input:focus, select:focus {
 			border-bottom-color: #333;
 			box-shadow: none;
 			outline: none;
@@ -61,7 +59,7 @@
             background-color: #fff;
             padding: 20px;
             margin: auto;
-            margin-top: 25vh;
+            margin-top: 20vh;
             border-radius: 10px;
             width: 50%;
             box-shadow: 9px 9px 11px -6px rgba(0,0,0,0.94);
@@ -76,7 +74,7 @@
 	<div class="container">
         <div class="form-block">
 			<form method="post" class="form-horizontal">
-				<h1>Admin Login</h1>
+				<h1>Add Book</h1>
 
 				{% csrf_token %}
 				{% for field in form %}
@@ -92,13 +90,13 @@
 							type="submit"
 							class="btn btn-success btn-lg"
 						>
-							Login
+							Submit
 						</button>
 					</div>
 				</div>
 			</form>
 			<div class="text-center">
-				Do not have account? <a href="{% url 'admin_signup' %}">Sign up here</a>
+				View all books in library <a href="{% url 'view_books' %}">here</a>
 			</div>
 		</div>
 	</body>

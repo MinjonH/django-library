@@ -10,10 +10,9 @@ class AdminSigupForm(forms.ModelForm):
 class StudentForm(forms.ModelForm):
     class Meta:
         model=models.Student
-        fields=['name','grade', 'book_limit']
+        fields=['student_num', 'first_name', 'last_name', 'grade']
 
 class BookForm(forms.ModelForm):
     class Meta:
         model=models.Book
-        fields=['title','author', 'series']
-
+        fields=['title','author', 'copies']    
