@@ -1,4 +1,4 @@
-from datetime import datetime,timedelta
+from datetime import date, datetime,timedelta
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
@@ -24,8 +24,9 @@ class Book(models.Model):
         return self.title
 
 def get_expiry():
-    return datetime.today() + timedelta(days=7)
- 
+    return date.today() + timedelta(days=7)
+
+
 class IssueBook(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)

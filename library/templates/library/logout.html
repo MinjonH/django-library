@@ -16,14 +16,14 @@
 			<h1>You are logged out.</h1>
 
 			<a
-				href="login"
+				href="{% url 'admin_login' %}"
 				role="button"
 				class="btn btn-secondary btn-lg active"
 				aria-pressed="true"
 				>Login</a
 			>
 			<a
-				href="signup"
+				href="{% url 'admin_signup' %}"
 				role="button"
 				class="btn btn-secondary btn-lg active"
 				aria-pressed="true"

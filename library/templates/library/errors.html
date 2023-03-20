@@ -1,0 +1,19 @@
+{% include 'library/navbar.html' %}
+<head>
+	<style>
+		.loginError {
+			font-size: 3em;
+			text-align: center;
+			margin-top: 50vh;
+			transform: translateY(-50%);
+		}
+		body {
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="loginError">
+		<h1>{{ error }}</h1>
+	</div>
+</body>

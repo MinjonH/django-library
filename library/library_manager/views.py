@@ -1,3 +1,4 @@
+import datetime
 from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
@@ -26,7 +27,7 @@ def admin_signup(request):
             user.is_staff = is_staff
             user.save()
             login(request, user)
-            return HttpResponseRedirect('dashboard')
+            return redirect(dashboard_view)
     return render(request,'library/admin_signup.html',{'form':form})
 
 def dashboard_view(request):
@@ -35,17 +36,25 @@ def dashboard_view(request):
 @login_required
 def view_books(request):
     books = models.Book.objects.all()
-    return render(request,'library/view_books.html',{'books':books})
+    if books:
+        return render(request,'library/view_books.html',{'books':books})
+    else:
+        return render(request,'library/errors.html',{'error': 'No books found'})
 
 @login_required
 def issued_books(request):
     book_issues = models.IssueBook.objects.all()
-    return render(request, 'library/issued.html', {'book_issues': book_issues})
+    if book_issues:
+        return render(request, 'library/issued.html', {'book_issues': book_issues})
+    else:
+        return render(request, 'library/errors.html', {'error': 'No books have been issued'})
 @login_required
 def view_students(request):
     students = models.Student.objects.all()
-    return render(request,'library/view_students.html',{'students':students})
-
+    if students:
+        return render(request,'library/view_students.html',{'students':students})
+    else:
+        return render(request,'library/errors.html',{'error': 'No students found'})
 @login_required
 def add_book(request):
     form = forms.BookForm()
@@ -70,11 +79,17 @@ def add_student(request):
 def issue_book(request):
     if request.method == 'POST':
         student_num = request.POST.get('student_num')
-        book_id = request.POST.get('book_id')
+        book_title = request.POST.get('book_title')
+        if not models.Student.objects.filter(student_num=student_num).exists():
+            return render(request, 'library/errors.html', {'error': 'Student with this student number does not exist'})
+        else:
+            student = models.Student.objects.get(student_num=student_num)
 
-        student = models.Student.objects.get(student_num=student_num)
-        book = models.Book.objects.get(id=book_id)
-
+        if not models.Book.objects.filter(title=book_title).exists():
+            return render(request, 'library/errors.html', {'error': 'Book with this title does not exist'})
+        else:
+            book = models.Book.objects.get(title=book_title)
+       
         if book.copies > 0:
             if student.issued_books < student.book_limit:
                 book.copies -= 1
@@ -86,9 +101,9 @@ def issue_book(request):
                 book_issue.save()
                 return redirect('issued_books')
             else:
-                return render(request, 'library/issue_book.html', {'error': 'Maximum number of books borrowed'})
+                return render(request, 'library/errors.html', {'error': 'Maximum number of books borrowed'})
         else:
-            return render(request, 'library/issue_book.html', {'error': 'Book not available'})
+            return render(request, 'library/errors.html', {'error': 'Book not available'})
     else:
         return render(request, 'library/issue_book.html')
 
@@ -109,8 +124,12 @@ def return_book(request, book_issue_id):
 
 @login_required
 def student_delete(request, pk):
-    obj = get_object_or_404(models.Student, student_num=pk)
-    obj.delete()
+    student = get_object_or_404(models.Student, student_num=pk)
+
+    if student.issued_books != 0:
+        return render(request, 'library/errors.html', {'error': 'This student still has books outstanding. Please return them first.'})
+    else:
+        student.delete()
     return redirect(view_students)
 
 @login_required

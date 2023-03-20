@@ -60,9 +60,11 @@
 						<a href="{% url 'view_students' %}" class="nav-item nav-link active"
 							>Students</a
 						>
-						<a href="logout" class="nav-item nav-link">LOGOUT</a>
+						<a href="{% url 'logout' %}" class="nav-item nav-link">LOGOUT</a>
 						{% else %}
-						<a href="login" class="nav-item nav-link">LOGIN</a>
+						<a href="{% url 'admin_login' %}" class="nav-item nav-link"
+							>LOGIN</a
+						>
 					</div>
 					{% endif %}
 				</div>

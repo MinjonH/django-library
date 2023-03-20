@@ -16,7 +16,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='library/logout.html'), name='logout'),
     
     # displays after login
-    path('dashboard/', views.dashboard_view, name='afterlogin'),
+    path('dashboard/', views.dashboard_view, name='dashboard'),
 
     #book functions
     path('books', views.view_books, name='view_books'),

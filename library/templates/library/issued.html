@@ -26,7 +26,6 @@
 		</style>
 	</head>
 	<body>
-		{% if book_issues %}
 		<div class="container">
 			<h1 class="display-4 text-center">ISSUED BOOKS</h1>
 			<div class="row">
@@ -38,7 +37,9 @@
 					/>
 				</div>
 				<div class="col-8 text-right">
-					<a href="add_book" class="btn btn-warning mb-4">Add Book</a>
+					<a href="{% url 'issue_book' %}" class="btn btn-warning mb-4"
+						>Issue Book</a
+					>
 				</div>
 			</div>
 			<div class="table-responsive">
@@ -74,9 +75,17 @@
 							<td class="text-center align-middle">
 								{{ book_issue.issue_date|date:'d-m-Y' }}
 							</td>
+
+							{% now "Y-m-d" as todays_date %}
+                            {% if todays_date > book_issue.return_date|date:"Y-m-d" %}
+							<td class="text-center align-middle" style="color: red">
+								{{ book_issue.return_date|date:'d-m-Y' }}
+							</td>
+							{% else %}
 							<td class="text-center align-middle">
 								{{ book_issue.return_date|date:'d-m-Y' }}
 							</td>
+							{% endif %}
 							<td
 								class="text-center align-middle"
 								class="text-center align-middle"
@@ -86,8 +95,12 @@
 									method="post"
 								>
 									{% csrf_token %}
-									<button type="submit" class="btn btn-outline-info">
-										<i class="fa-solid fa-book"></i>
+									<button
+										title="Return book"
+										type="submit"
+										class="btn btn-outline-info"
+									>
+										<i class="fa-solid fa-arrow-right-to-bracket"></i>
 									</button>
 								</form>
 							</td>
@@ -97,10 +110,5 @@
 				</table>
 			</div>
 		</div>
-
-		{% else %}
-		<h1 class="display-4 text-center">No books have been issued</h1>
-
-		{% endif %}
 	</body>
 </html>
