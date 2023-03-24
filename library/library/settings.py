@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5n&5sr83vks8s$j+=c2ku18@_5n!!4qo$05t+g0^0h%x7zxi#k'
+SECRET_KEY = '5n&5sr83vks8s$j+=c2ku18@_5n!!4qo$05t+g0^0h%x7zxi#k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'library_db',
         'USER': 'postgres',
         'PASSWORD': 'MLpostgres2426*',
-        'HOST': 'localhost',
+        'HOST': '44.201.167.139',
         'PORT': '5432',
     }
 }
@@ -123,8 +123,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
