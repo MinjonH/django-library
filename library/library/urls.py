@@ -33,5 +33,3 @@ urlpatterns = [
     path('student/update/<int:pk>', views.student_update, name='student_update'),
     path('student/delete/<int:pk>', views.student_delete, name='student_delete'),
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
