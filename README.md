@@ -52,7 +52,7 @@ Once logged in, you can add, edit, and delete books from the library, as well as
 
 ## Running the app with Docker
 
-1. Go to [https://labs.play-with-docker.com/] (https://labs.play-with-docker.com/) and login with your Docker Hub account. If you do not have an account, create one here [https://hub.docker.com/] (https://hub.docker.com/)
+1. Go to [https://labs.play-with-docker.com/](https://labs.play-with-docker.com/) and login with your Docker Hub account. If you do not have an account, create one here [https://hub.docker.com/](https://hub.docker.com/)
 2. Then click “Start”, and on the next screen click “add new instance”.
 3. In the terminal, issue the following command to automatically download and run the Docker image:
     ```
