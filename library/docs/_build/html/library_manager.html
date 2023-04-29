@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>library_manager package &mdash; Django Library 00.00.01 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Django Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">library_manager package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-library_manager.admin">library_manager.admin module</a></li>
+<li><a class="reference internal" href="#module-library_manager.apps">library_manager.apps module</a><ul>
+<li><a class="reference internal" href="#library_manager.apps.LibraryManagerConfig"><code class="docutils literal notranslate"><span class="pre">LibraryManagerConfig</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.apps.LibraryManagerConfig.name"><code class="docutils literal notranslate"><span class="pre">LibraryManagerConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-library_manager.forms">library_manager.forms module</a><ul>
+<li><a class="reference internal" href="#library_manager.forms.AdminSigupForm"><code class="docutils literal notranslate"><span class="pre">AdminSigupForm</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.forms.AdminSigupForm.Meta"><code class="docutils literal notranslate"><span class="pre">AdminSigupForm.Meta</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.forms.AdminSigupForm.Meta.fields"><code class="docutils literal notranslate"><span class="pre">AdminSigupForm.Meta.fields</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.forms.AdminSigupForm.Meta.model"><code class="docutils literal notranslate"><span class="pre">AdminSigupForm.Meta.model</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library_manager.forms.AdminSigupForm.base_fields"><code class="docutils literal notranslate"><span class="pre">AdminSigupForm.base_fields</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.forms.AdminSigupForm.declared_fields"><code class="docutils literal notranslate"><span class="pre">AdminSigupForm.declared_fields</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.forms.AdminSigupForm.media"><code class="docutils literal notranslate"><span class="pre">AdminSigupForm.media</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library_manager.forms.BookForm"><code class="docutils literal notranslate"><span class="pre">BookForm</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.forms.BookForm.Meta"><code class="docutils literal notranslate"><span class="pre">BookForm.Meta</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.forms.BookForm.Meta.fields"><code class="docutils literal notranslate"><span class="pre">BookForm.Meta.fields</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.forms.BookForm.Meta.model"><code class="docutils literal notranslate"><span class="pre">BookForm.Meta.model</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library_manager.forms.BookForm.base_fields"><code class="docutils literal notranslate"><span class="pre">BookForm.base_fields</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.forms.BookForm.declared_fields"><code class="docutils literal notranslate"><span class="pre">BookForm.declared_fields</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.forms.BookForm.media"><code class="docutils literal notranslate"><span class="pre">BookForm.media</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library_manager.forms.StudentForm"><code class="docutils literal notranslate"><span class="pre">StudentForm</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.forms.StudentForm.Meta"><code class="docutils literal notranslate"><span class="pre">StudentForm.Meta</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.forms.StudentForm.Meta.fields"><code class="docutils literal notranslate"><span class="pre">StudentForm.Meta.fields</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.forms.StudentForm.Meta.model"><code class="docutils literal notranslate"><span class="pre">StudentForm.Meta.model</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library_manager.forms.StudentForm.base_fields"><code class="docutils literal notranslate"><span class="pre">StudentForm.base_fields</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.forms.StudentForm.declared_fields"><code class="docutils literal notranslate"><span class="pre">StudentForm.declared_fields</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.forms.StudentForm.media"><code class="docutils literal notranslate"><span class="pre">StudentForm.media</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-library_manager.models">library_manager.models module</a><ul>
+<li><a class="reference internal" href="#library_manager.models.Book"><code class="docutils literal notranslate"><span class="pre">Book</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.models.Book.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Book.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Book.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Book.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Book.author"><code class="docutils literal notranslate"><span class="pre">Book.author</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Book.copies"><code class="docutils literal notranslate"><span class="pre">Book.copies</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Book.id"><code class="docutils literal notranslate"><span class="pre">Book.id</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Book.is_issued"><code class="docutils literal notranslate"><span class="pre">Book.is_issued</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Book.issuebook_set"><code class="docutils literal notranslate"><span class="pre">Book.issuebook_set</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Book.objects"><code class="docutils literal notranslate"><span class="pre">Book.objects</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Book.title"><code class="docutils literal notranslate"><span class="pre">Book.title</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook"><code class="docutils literal notranslate"><span class="pre">IssueBook</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">IssueBook.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">IssueBook.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.book"><code class="docutils literal notranslate"><span class="pre">IssueBook.book</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.book_id"><code class="docutils literal notranslate"><span class="pre">IssueBook.book_id</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.get_next_by_issue_date"><code class="docutils literal notranslate"><span class="pre">IssueBook.get_next_by_issue_date()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.get_next_by_return_date"><code class="docutils literal notranslate"><span class="pre">IssueBook.get_next_by_return_date()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.get_previous_by_issue_date"><code class="docutils literal notranslate"><span class="pre">IssueBook.get_previous_by_issue_date()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.get_previous_by_return_date"><code class="docutils literal notranslate"><span class="pre">IssueBook.get_previous_by_return_date()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.id"><code class="docutils literal notranslate"><span class="pre">IssueBook.id</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.issue_date"><code class="docutils literal notranslate"><span class="pre">IssueBook.issue_date</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.objects"><code class="docutils literal notranslate"><span class="pre">IssueBook.objects</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.return_date"><code class="docutils literal notranslate"><span class="pre">IssueBook.return_date</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.student"><code class="docutils literal notranslate"><span class="pre">IssueBook.student</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.IssueBook.student_id"><code class="docutils literal notranslate"><span class="pre">IssueBook.student_id</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library_manager.models.Student"><code class="docutils literal notranslate"><span class="pre">Student</span></code></a><ul>
+<li><a class="reference internal" href="#library_manager.models.Student.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Student.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Student.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.book_limit"><code class="docutils literal notranslate"><span class="pre">Student.book_limit</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.first_name"><code class="docutils literal notranslate"><span class="pre">Student.first_name</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.grade"><code class="docutils literal notranslate"><span class="pre">Student.grade</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.id"><code class="docutils literal notranslate"><span class="pre">Student.id</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.issuebook_set"><code class="docutils literal notranslate"><span class="pre">Student.issuebook_set</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.issued_books"><code class="docutils literal notranslate"><span class="pre">Student.issued_books</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.last_name"><code class="docutils literal notranslate"><span class="pre">Student.last_name</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.objects"><code class="docutils literal notranslate"><span class="pre">Student.objects</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.models.Student.student_num"><code class="docutils literal notranslate"><span class="pre">Student.student_num</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library_manager.models.get_expiry"><code class="docutils literal notranslate"><span class="pre">get_expiry()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-library_manager.tests">library_manager.tests module</a></li>
+<li><a class="reference internal" href="#module-library_manager.views">library_manager.views module</a><ul>
+<li><a class="reference internal" href="#library_manager.views.add_book"><code class="docutils literal notranslate"><span class="pre">add_book()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.add_student"><code class="docutils literal notranslate"><span class="pre">add_student()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.admin_signup"><code class="docutils literal notranslate"><span class="pre">admin_signup()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.book_delete"><code class="docutils literal notranslate"><span class="pre">book_delete()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.book_update"><code class="docutils literal notranslate"><span class="pre">book_update()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.dashboard_view"><code class="docutils literal notranslate"><span class="pre">dashboard_view()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.home_view"><code class="docutils literal notranslate"><span class="pre">home_view()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.issue_book"><code class="docutils literal notranslate"><span class="pre">issue_book()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.issued_books"><code class="docutils literal notranslate"><span class="pre">issued_books()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.return_book"><code class="docutils literal notranslate"><span class="pre">return_book()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.student_delete"><code class="docutils literal notranslate"><span class="pre">student_delete()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.student_update"><code class="docutils literal notranslate"><span class="pre">student_update()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.view_books"><code class="docutils literal notranslate"><span class="pre">view_books()</span></code></a></li>
+<li><a class="reference internal" href="#library_manager.views.view_students"><code class="docutils literal notranslate"><span class="pre">view_students()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-library_manager">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Django Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">library_manager package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/library_manager.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="library-manager-package">
+<h1>library_manager package<a class="headerlink" href="#library-manager-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="library_manager.migrations.html">library_manager.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="library_manager.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_manager.migrations.html#module-library_manager.migrations.0001_initial">library_manager.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="library_manager.migrations.html#module-library_manager.migrations.0002_student_issued_books">library_manager.migrations.0002_student_issued_books module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0002_student_issued_books.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0002_student_issued_books.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0002_student_issued_books.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="library_manager.migrations.html#module-library_manager.migrations.0003_issuebook_return_date">library_manager.migrations.0003_issuebook_return_date module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0003_issuebook_return_date.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0003_issuebook_return_date.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="library_manager.migrations.html#library_manager.migrations.0003_issuebook_return_date.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="library_manager.migrations.html#module-library_manager.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-library_manager.admin">
+<span id="library-manager-admin-module"></span><h2>library_manager.admin module<a class="headerlink" href="#module-library_manager.admin" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-library_manager.apps">
+<span id="library-manager-apps-module"></span><h2>library_manager.apps module<a class="headerlink" href="#module-library_manager.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.apps.LibraryManagerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">library_manager.apps.</span></span><span class="sig-name descname"><span class="pre">LibraryManagerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/apps.html#LibraryManagerConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.apps.LibraryManagerConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.apps.LibraryManagerConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'library_manager'</span></em><a class="headerlink" href="#library_manager.apps.LibraryManagerConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-library_manager.forms">
+<span id="library-manager-forms-module"></span><h2>library_manager.forms module<a class="headerlink" href="#module-library_manager.forms" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.forms.AdminSigupForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">library_manager.forms.</span></span><span class="sig-name descname"><span class="pre">AdminSigupForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/forms.html#AdminSigupForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.forms.AdminSigupForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.forms.AdminSigupForm.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/library_manager/forms.html#AdminSigupForm.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.forms.AdminSigupForm.Meta" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.AdminSigupForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['first_name',</span> <span class="pre">'last_name',</span> <span class="pre">'username',</span> <span class="pre">'password']</span></em><a class="headerlink" href="#library_manager.forms.AdminSigupForm.Meta.fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.AdminSigupForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#library_manager.forms.AdminSigupForm.Meta.model" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.AdminSigupForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'first_name':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'last_name':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'password':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'username':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#library_manager.forms.AdminSigupForm.base_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.AdminSigupForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#library_manager.forms.AdminSigupForm.declared_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="library_manager.forms.AdminSigupForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#library_manager.forms.AdminSigupForm.media" title="Permalink to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.forms.BookForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">library_manager.forms.</span></span><span class="sig-name descname"><span class="pre">BookForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/forms.html#BookForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.forms.BookForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.forms.BookForm.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/library_manager/forms.html#BookForm.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.forms.BookForm.Meta" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.BookForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['title',</span> <span class="pre">'author',</span> <span class="pre">'copies']</span></em><a class="headerlink" href="#library_manager.forms.BookForm.Meta.fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.BookForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#library_manager.forms.BookForm.Meta.model" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#library_manager.models.Book" title="library_manager.models.Book"><code class="xref py py-class docutils literal notranslate"><span class="pre">Book</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.BookForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'author':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'copies':</span> <span class="pre">&lt;django.forms.fields.IntegerField</span> <span class="pre">object&gt;,</span> <span class="pre">'title':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#library_manager.forms.BookForm.base_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.BookForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#library_manager.forms.BookForm.declared_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="library_manager.forms.BookForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#library_manager.forms.BookForm.media" title="Permalink to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.forms.StudentForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">library_manager.forms.</span></span><span class="sig-name descname"><span class="pre">StudentForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/forms.html#StudentForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.forms.StudentForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.forms.StudentForm.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/library_manager/forms.html#StudentForm.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.forms.StudentForm.Meta" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.StudentForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['student_num',</span> <span class="pre">'first_name',</span> <span class="pre">'last_name',</span> <span class="pre">'grade']</span></em><a class="headerlink" href="#library_manager.forms.StudentForm.Meta.fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.StudentForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#library_manager.forms.StudentForm.Meta.model" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#library_manager.models.Student" title="library_manager.models.Student"><code class="xref py py-class docutils literal notranslate"><span class="pre">Student</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.StudentForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'first_name':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'grade':</span> <span class="pre">&lt;django.forms.fields.IntegerField</span> <span class="pre">object&gt;,</span> <span class="pre">'last_name':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'student_num':</span> <span class="pre">&lt;django.forms.fields.IntegerField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#library_manager.forms.StudentForm.base_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.forms.StudentForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#library_manager.forms.StudentForm.declared_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="library_manager.forms.StudentForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#library_manager.forms.StudentForm.media" title="Permalink to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-library_manager.models">
+<span id="library-manager-models-module"></span><h2>library_manager.models module<a class="headerlink" href="#module-library_manager.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.models.Book">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">library_manager.models.</span></span><span class="sig-name descname"><span class="pre">Book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_issued</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/models.html#Book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.models.Book" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="library_manager.models.Book.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#library_manager.models.Book.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="library_manager.models.Book.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#library_manager.models.Book.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Book.author">
+<span class="sig-name descname"><span class="pre">author</span></span><a class="headerlink" href="#library_manager.models.Book.author" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Book.copies">
+<span class="sig-name descname"><span class="pre">copies</span></span><a class="headerlink" href="#library_manager.models.Book.copies" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Book.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#library_manager.models.Book.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Book.is_issued">
+<span class="sig-name descname"><span class="pre">is_issued</span></span><a class="headerlink" href="#library_manager.models.Book.is_issued" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Book.issuebook_set">
+<span class="sig-name descname"><span class="pre">issuebook_set</span></span><a class="headerlink" href="#library_manager.models.Book.issuebook_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Book.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#library_manager.models.Book.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Book.title">
+<span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#library_manager.models.Book.title" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">library_manager.models.</span></span><span class="sig-name descname"><span class="pre">IssueBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">student</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">book</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">issue_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/models.html#IssueBook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.models.IssueBook" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#library_manager.models.IssueBook.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#library_manager.models.IssueBook.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.book">
+<span class="sig-name descname"><span class="pre">book</span></span><a class="headerlink" href="#library_manager.models.IssueBook.book" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.book_id">
+<span class="sig-name descname"><span class="pre">book_id</span></span><a class="headerlink" href="#library_manager.models.IssueBook.book_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.get_next_by_issue_date">
+<span class="sig-name descname"><span class="pre">get_next_by_issue_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">issue_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#library_manager.models.IssueBook.get_next_by_issue_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.get_next_by_return_date">
+<span class="sig-name descname"><span class="pre">get_next_by_return_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">return_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#library_manager.models.IssueBook.get_next_by_return_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.get_previous_by_issue_date">
+<span class="sig-name descname"><span class="pre">get_previous_by_issue_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">issue_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#library_manager.models.IssueBook.get_previous_by_issue_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.get_previous_by_return_date">
+<span class="sig-name descname"><span class="pre">get_previous_by_return_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">return_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#library_manager.models.IssueBook.get_previous_by_return_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#library_manager.models.IssueBook.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.issue_date">
+<span class="sig-name descname"><span class="pre">issue_date</span></span><a class="headerlink" href="#library_manager.models.IssueBook.issue_date" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#library_manager.models.IssueBook.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.return_date">
+<span class="sig-name descname"><span class="pre">return_date</span></span><a class="headerlink" href="#library_manager.models.IssueBook.return_date" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.student">
+<span class="sig-name descname"><span class="pre">student</span></span><a class="headerlink" href="#library_manager.models.IssueBook.student" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.IssueBook.student_id">
+<span class="sig-name descname"><span class="pre">student_id</span></span><a class="headerlink" href="#library_manager.models.IssueBook.student_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="library_manager.models.Student">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">library_manager.models.</span></span><span class="sig-name descname"><span class="pre">Student</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">student_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grade</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">book_limit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">issued_books</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/models.html#Student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.models.Student" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="library_manager.models.Student.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#library_manager.models.Student.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="library_manager.models.Student.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#library_manager.models.Student.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Student.book_limit">
+<span class="sig-name descname"><span class="pre">book_limit</span></span><a class="headerlink" href="#library_manager.models.Student.book_limit" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Student.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#library_manager.models.Student.first_name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Student.grade">
+<span class="sig-name descname"><span class="pre">grade</span></span><a class="headerlink" href="#library_manager.models.Student.grade" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Student.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#library_manager.models.Student.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Student.issuebook_set">
+<span class="sig-name descname"><span class="pre">issuebook_set</span></span><a class="headerlink" href="#library_manager.models.Student.issuebook_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Student.issued_books">
+<span class="sig-name descname"><span class="pre">issued_books</span></span><a class="headerlink" href="#library_manager.models.Student.issued_books" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Student.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#library_manager.models.Student.last_name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Student.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#library_manager.models.Student.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="library_manager.models.Student.student_num">
+<span class="sig-name descname"><span class="pre">student_num</span></span><a class="headerlink" href="#library_manager.models.Student.student_num" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.models.get_expiry">
+<span class="sig-prename descclassname"><span class="pre">library_manager.models.</span></span><span class="sig-name descname"><span class="pre">get_expiry</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/models.html#get_expiry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.models.get_expiry" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-library_manager.tests">
+<span id="library-manager-tests-module"></span><h2>library_manager.tests module<a class="headerlink" href="#module-library_manager.tests" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-library_manager.views">
+<span id="library-manager-views-module"></span><h2>library_manager.views module<a class="headerlink" href="#module-library_manager.views" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.add_book">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">add_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#add_book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.add_book" title="Permalink to this definition"></a></dt>
+<dd><p>Allows the user to add a new book to the library</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.add_student">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">add_student</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#add_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.add_student" title="Permalink to this definition"></a></dt>
+<dd><p>Allows the user to add a new student to the library database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.admin_signup">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">admin_signup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#admin_signup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.admin_signup" title="Permalink to this definition"></a></dt>
+<dd><p>Used to register a new user</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.book_delete">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">book_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#book_delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.book_delete" title="Permalink to this definition"></a></dt>
+<dd><p>Allows the user to delete a book from the library database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.book_update">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">book_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#book_update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.book_update" title="Permalink to this definition"></a></dt>
+<dd><p>Allows the user to update the information of a book in the library database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.dashboard_view">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">dashboard_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#dashboard_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.dashboard_view" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.home_view">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">home_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#home_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.home_view" title="Permalink to this definition"></a></dt>
+<dd><p>Shows the homepage</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.issue_book">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">issue_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#issue_book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.issue_book" title="Permalink to this definition"></a></dt>
+<dd><p>Allows the user to issue a book to a student</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.issued_books">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">issued_books</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#issued_books"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.issued_books" title="Permalink to this definition"></a></dt>
+<dd><p>Lists all the issued books in the library</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.return_book">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">return_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">book_issue_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#return_book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.return_book" title="Permalink to this definition"></a></dt>
+<dd><p>Allows the user to return a book that has been issued to a student</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.student_delete">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">student_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#student_delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.student_delete" title="Permalink to this definition"></a></dt>
+<dd><p>Allows the user to delete a student from the library database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.student_update">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">student_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#student_update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.student_update" title="Permalink to this definition"></a></dt>
+<dd><p>Allows the user to update the details of a student</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.view_books">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">view_books</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#view_books"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.view_books" title="Permalink to this definition"></a></dt>
+<dd><p>Lists all the books in the library</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="library_manager.views.view_students">
+<span class="sig-prename descclassname"><span class="pre">library_manager.views.</span></span><span class="sig-name descname"><span class="pre">view_students</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/library_manager/views.html#view_students"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#library_manager.views.view_students" title="Permalink to this definition"></a></dt>
+<dd><p>Lists all the students</p>
+</dd></dl>
+
+</section>
+<section id="module-library_manager">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-library_manager" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Minjon Holtzhausen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
